@@ -1,0 +1,508 @@
+:root {
+  --red: #d71920;
+  --red-dark: #9f1117;
+  --ink: #15171c;
+  --muted: #626873;
+  --line: #e4e7ec;
+  --paper: #f6f7f9;
+  --white: #ffffff;
+  --shadow: 0 22px 60px rgba(13, 18, 28, 0.16);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  font-family: "Inter", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px clamp(20px, 5vw, 72px);
+  color: var(--white);
+  background: linear-gradient(180deg, rgba(1, 1, 2, 0.72), rgba(12, 14, 18, 0));
+}
+
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.brand span {
+  color: var(--red);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.brand small {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: clamp(14px, 3vw, 34px);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.main-nav a {
+  padding: 8px 0;
+}
+
+.main-nav a:hover {
+  color: #ffd5d7;
+}
+
+.hero {
+  min-height: 92vh;
+  min-height: 92svh;
+  display: grid;
+  align-items: end;
+  padding: 128px clamp(20px, 5vw, 72px) 72px;
+  color: var(--white);
+  background:
+    linear-gradient(90deg, rgba(8, 10, 14, 0.88) 0%, rgba(8, 10, 14, 0.68) 46%, rgba(8, 10, 14, 0.18) 100%),
+    url("EPATRANSPORTES.png") center 38% / cover no-repeat;
+}
+
+.hero-content {
+  width: min(720px, 100%);
+}
+
+.eyebrow {
+  margin-bottom: 14px;
+  color: var(--red);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.section h2,
+.contact h2 {
+  letter-spacing: 0;
+  line-height: 1.02;
+}
+
+.hero h1 {
+  max-width: 12ch;
+  font-size: clamp(3.4rem, 9vw, 7.8rem);
+  font-weight: 800;
+}
+
+.hero-text {
+  max-width: 640px;
+  margin-top: 22px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 4px;
+  padding: 0 22px;
+  font-weight: 800;
+}
+
+.button.primary {
+  border-color: var(--red);
+  background: var(--red);
+}
+
+.button.primary:hover {
+  background: var(--red-dark);
+}
+
+.button.secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.stats div {
+  min-height: 126px;
+  padding: 30px clamp(20px, 4vw, 54px);
+  background: var(--white);
+}
+
+.stats strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--red);
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  line-height: 1;
+}
+
+.stats span,
+.section p,
+.contact p,
+.contact-box span {
+  color: var(--muted);
+}
+
+.section {
+  padding: clamp(64px, 10vw, 110px) clamp(20px, 5vw, 72px);
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 34px;
+}
+
+.section h2,
+.contact h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 10px 30px rgba(13, 18, 28, 0.06);
+}
+
+.service-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.service-card div {
+  padding: 24px;
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.22rem;
+}
+
+.highlight-card {
+  background: var(--white);
+  color: var(--ink);
+}
+
+.highlight-card p {
+  color: var(--muted);
+}
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: clamp(30px, 6vw, 72px);
+  align-items: center;
+  background: var(--paper);
+}
+
+.about-media img {
+  width: 100%;
+  min-height: 420px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.about-content p {
+  margin-top: 20px;
+  font-size: 1.06rem;
+}
+
+.check-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+  list-style: none;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 30px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.check-list li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--red);
+  content: "\2713";
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 460px);
+  gap: 32px;
+  align-items: center;
+  padding: clamp(56px, 8vw, 90px) clamp(20px, 5vw, 72px);
+  color: var(--white);
+  background: linear-gradient(135deg, #181b22 0%, #292f3b 100%);
+}
+
+.contact .eyebrow,
+.contact p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.contact .eyebrow {
+  color: #ff686d;
+}
+
+.contact h2 {
+  max-width: 760px;
+}
+
+.contact p {
+  max-width: 620px;
+  margin-top: 18px;
+}
+
+.contact-box {
+  display: grid;
+  gap: 10px;
+  border-left: 4px solid var(--red);
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-box a {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.contact-box span {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px clamp(20px, 5vw, 72px);
+  color: #d4d7dd;
+  background: #0d0f14;
+  font-size: 0.92rem;
+ 
+}
+
+.site-footer strong {
+  color: var(--white);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .site-header {
+    position: absolute;
+    align-items: center;
+    padding: 16px 24px;
+    background: linear-gradient(180deg, rgba(12, 14, 18, 0.82), rgba(12, 14, 18, 0.18));
+  }
+
+  .main-nav {
+    gap: 14px;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    min-height: 88vh;
+    min-height: 88svh;
+    padding: 122px 24px 52px;
+    background:
+      linear-gradient(180deg, rgba(8, 10, 14, 0.8) 0%, rgba(8, 10, 14, 0.76) 54%, rgba(8, 10, 14, 0.52) 100%),
+      url("EPATRANSPORTES.png") 58% 38% / cover no-repeat;
+  }
+
+  .stats,
+  .service-grid,
+  .about,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .section,
+  .contact {
+    padding: 58px 24px;
+  }
+
+  .stats div {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .service-grid {
+    gap: 18px;
+  }
+
+  .about-media img {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header {
+    position: relative;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px 18px;
+    color: var(--ink);
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .brand span {
+    font-size: 1.7rem;
+  }
+
+  .brand small {
+    color: var(--ink);
+  }
+
+  .main-nav {
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .main-nav a {
+    flex: 1;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  .main-nav a:hover {
+    color: var(--red);
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 70px 18px 42px;
+    background:
+      linear-gradient(180deg, rgba(8, 10, 14, 0.84) 0%, rgba(8, 10, 14, 0.78) 100%),
+      url("EPATRANSPORTES.png") 60% center / cover no-repeat;
+  }
+
+  .hero h1 {
+    max-width: 9ch;
+    font-size: clamp(2.65rem, 15vw, 3.35rem);
+  }
+
+  .hero-text {
+    margin-top: 18px;
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    margin-top: 26px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .section,
+  .contact {
+    padding: 46px 18px;
+  }
+
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .section h2,
+  .contact h2 {
+    font-size: clamp(1.85rem, 10vw, 2.45rem);
+  }
+
+  .service-card div,
+  .contact-box {
+    padding: 20px;
+  }
+
+  .service-card img {
+    aspect-ratio: 16 / 11;
+  }
+
+  .about-media img {
+    min-height: 240px;
+  }
+
+  .contact-box a {
+    font-size: 1rem;
+  }
+
+  .stats div {
+    min-height: auto;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+}
