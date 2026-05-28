@@ -1,6 +1,6 @@
 :root {
-  --red: #d71920;
-  --red-dark: #9f1117;
+  --red: #ede0e1;
+  --red-dark: #F8A849;
   --ink: #15171c;
   --muted: #626873;
   --line: #e4e7ec;
@@ -44,21 +44,41 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(110px, 170px) 1fr minmax(190px, 250px);
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 18px clamp(20px, 5vw, 72px);
+  justify-content: center;
+  gap: 18px;
+  padding: 12px clamp(20px, 5vw, 76px);
   color: var(--white);
-  background: linear-gradient(180deg, rgba(1, 1, 2, 0.72), rgba(12, 14, 18, 0));
+  background: rgba(6, 7, 9, 0.84);
+  border-top: 2px solid rgba(248, 168, 73, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.site-header.is-scrolled {
+  background: rgba(6, 7, 9, 0.94);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.34);
 }
 
 .brand {
   display: inline-flex;
-  align-items: baseline;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-start;
   gap: 8px;
   font-weight: 800;
   text-transform: uppercase;
+}
+
+.brand img {
+  width: clamp(104px, 11vw, 154px);
+  max-height: 62px;
+  object-fit: contain;
 }
 
 .brand span {
@@ -76,18 +96,71 @@ a {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: clamp(14px, 3vw, 34px);
+  justify-content: center;
+  gap: clamp(24px, 4vw, 54px);
   font-size: 0.95rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .main-nav a {
-  padding: 8px 0;
+  position: relative;
+  padding: 12px 0;
 }
 
 .main-nav a:hover {
-  color: #ffd5d7;
+  color: var(--red-dark);
+}
+
+.main-nav a::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--red-dark);
+  content: "";
+  transition: width 0.2s ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+.header-quote {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  justify-self: end;
+  min-height: 46px;
+  border: 1px solid var(--red-dark);
+  border-radius: 6px;
+  padding: 0 18px;
+  color: var(--red-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.header-quote svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+
+.header-quote:hover {
+  transform: translateY(-2px);
+  background: var(--red-dark);
+  color: var(--ink);
+}
+
+.hero-quote {
+  display: none;
 }
 
 .hero {
@@ -96,7 +169,7 @@ a {
   display: grid;
   align-items: end;
   padding: 128px clamp(20px, 5vw, 72px) 72px;
-  color: var(--white);
+  color: #F8A849;
   background:
     linear-gradient(90deg, rgba(8, 10, 14, 0.88) 0%, rgba(8, 10, 14, 0.68) 46%, rgba(8, 10, 14, 0.18) 100%),
     url("EPATRANSPORTES.png") center 38% / cover no-repeat;
@@ -108,8 +181,8 @@ a {
 
 .eyebrow {
   margin-bottom: 14px;
-  color: var(--red);
-  font-size: 1.5rem;
+  color:var(--white);
+  font-size: 1.2rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -159,7 +232,9 @@ a {
 }
 
 .button.primary:hover {
-  background: var(--red-dark);
+  border-color: #f7c77d;
+  background: #f7c77d;
+  color: var(--ink);
 }
 
 .button.secondary:hover {
@@ -221,6 +296,7 @@ a {
   border-radius: 8px;
   background: var(--white);
   box-shadow: 0 10px 30px rgba(13, 18, 28, 0.06);
+  cursor: pointer;
 }
 
 .service-card img {
@@ -238,6 +314,10 @@ a {
   font-size: 1.22rem;
 }
 
+.section-heading h3 {
+  font-size: 1.50rem
+}
+
 .highlight-card {
   background: var(--white);
   color: var(--ink);
@@ -245,6 +325,57 @@ a {
 
 .highlight-card p {
   color: var(--muted);
+}
+
+.service-list {
+  margin-top: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px;
+  background: var(--white);
+  box-shadow: 0 10px 30px rgba(13, 18, 28, 0.06);
+}
+
+.service-list h3 {
+  margin-bottom: 18px;
+  font-size: 1.35rem;
+  text-align: center;
+}
+
+.service-list ul {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px 18px;
+  list-style: none;
+}
+
+.service-list li {
+  position: relative;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px 14px 10px 34px;
+  color: var(--ink);
+  font-weight: 700;
+  background: var(--paper);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-list li::before {
+  position: absolute;
+  left: 14px;
+  color: var(--red-dark);
+  content: "\2022";
+}
+
+.service-list li:hover {
+  transform: translateY(-3px);
+  border-color: var(--red-dark);
+  background: var(--white);
+  box-shadow: 0 12px 26px rgba(13, 18, 28, 0.12);
 }
 
 .about {
@@ -306,7 +437,7 @@ a {
 }
 
 .contact .eyebrow {
-  color: #ff686d;
+  color: #F8A849;
 }
 
 .contact h2 {
@@ -356,15 +487,34 @@ a {
 
 @media (max-width: 860px) {
   .site-header {
-    position: absolute;
+    position: fixed;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    padding: 16px 24px;
-    background: linear-gradient(180deg, rgba(12, 14, 18, 0.82), rgba(12, 14, 18, 0.18));
+    gap: 14px;
+    padding: 10px 20px;
+    background: rgba(6, 7, 9, 0.9);
   }
 
   .main-nav {
     gap: 14px;
     font-size: 0.85rem;
+    letter-spacing: 0.04em;
+  }
+
+  .brand img {
+    width: clamp(92px, 18vw, 126px);
+    max-height: 52px;
+  }
+
+  .header-quote {
+    min-height: 42px;
+    padding: 0 12px;
+    font-size: 0.74rem;
+  }
+
+  .header-quote svg {
+    width: 20px;
+    height: 20px;
   }
 
   .hero {
@@ -397,21 +547,29 @@ a {
     gap: 18px;
   }
 
+  .service-list ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .about-media img {
     min-height: 300px;
   }
 }
 
 @media (max-width: 560px) {
+  .brand {
+    display: none;
+  }
+
   .site-header {
-    position: relative;
-    flex-direction: column;
+    position: sticky;
+    grid-template-columns: 1fr;
     align-items: stretch;
-    gap: 12px;
-    padding: 16px 18px;
-    color: var(--ink);
-    background: var(--white);
-    border-bottom: 1px solid var(--line);
+    gap: 8px;
+    padding: 10px 14px;
+    color: var(--white);
+    background: rgba(6, 7, 9, 0.94);
+    border-bottom: 1px solid rgba(248, 168, 73, 0.26);
   }
 
   .brand span {
@@ -419,26 +577,67 @@ a {
   }
 
   .brand small {
-    color: var(--ink);
+    color: var(--white);
+  }
+
+  .brand img {
+    width: min(38vw, 112px);
+    max-height: 44px;
   }
 
   .main-nav {
     justify-content: space-between;
     gap: 8px;
     width: 100%;
+    order: 1;
+    letter-spacing: 0;
   }
 
   .main-nav a {
     flex: 1;
-    border: 1px solid var(--line);
+    border: 1px solid rgba(248, 168, 73, 0.28);
     border-radius: 4px;
     padding: 10px 8px;
     text-align: center;
     font-size: 0.8rem;
   }
 
+  .main-nav a::after {
+    display: none;
+  }
+
+  .header-quote {
+    display: none;
+  }
+
+  .hero-quote {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 46px;
+    margin-top: 24px;
+    border: 1px solid var(--red-dark);
+    border-radius: 6px;
+    padding: 0 16px;
+    color: var(--ink);
+    background: var(--red-dark);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .hero-quote svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    flex: 0 0 auto;
+  }
+
   .main-nav a:hover {
-    color: var(--red);
+    color: var(--red-dark);
   }
 
   .hero {
@@ -482,12 +681,25 @@ a {
   }
 
   .service-card div,
+  .service-list,
   .contact-box {
     padding: 20px;
   }
 
   .service-card img {
     aspect-ratio: 16 / 11;
+  }
+
+  .service-list {
+    margin-top: 24px;
+  }
+
+  .service-list ul {
+    grid-template-columns: 1fr;
+  }
+
+  .service-list li {
+    min-height: 42px;
   }
 
   .about-media img {
