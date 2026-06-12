@@ -58,7 +58,7 @@
           <img src="transportando.png" alt="Guindauto movimentando equipamento pesado em ambiente industrial">
           <div>
             <h3>Remoção industrial</h3>
-            <p>Moviamentação de máquinas, equipamentos e volumes pesados em fábricas, galpões e áreas técnicas.</p>
+            <p>Movimentação de máquinas, equipamentos e volumes pesados em fábricas, galpões e áreas técnicas.</p>
           </div>
         </article>
 
@@ -86,13 +86,14 @@
           <li>Remoções técnicas industriais</li>
           <li>Máquinas operatrizes</li>
           <li>Centros de usinagens</li>
-          <li>Tornos CNC's</li>
-          <li>Estruturas metálicas</li>
+          <li>Máquinas Gráficas e Impressoras de grandes formatos</li>
+          <li>Estruturas metálicas e coberturas prediais</li>
           <li>Obras e engenharias</li>
           <li>Máquinas de cartonagens</li>
-          <li>Gráficas</li>
-          <li>Impressoras</li>
-          <li>Máquinas de movelaria</li>
+          <li>Implantação de postes metálicos e concretos</li>
+          <li>Dobradeiras e estamparias</li>
+          <li>Transformadores elétricos e cabines primárias</li>
+          <li>Totens de comunicação visual</li>
         </ul>
       </div>
     </section>
@@ -132,6 +133,22 @@
     </section>
   </main>
 
+  <div class="service-modal" id="service-modal" aria-hidden="true">
+    <div class="service-modal__overlay" data-close-modal></div>
+    <div class="service-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="service-modal-title">
+      <button class="service-modal__close" type="button" aria-label="Fechar janela" data-close-modal>×</button>
+      <img id="service-modal-image" src="transportando.png" alt="Imagem demonstrativa do serviço selecionado">
+      <div class="service-modal__content">
+        <p class="eyebrow">Serviço selecionado</p>
+        <h3 id="service-modal-title">Serviço</h3>
+        <p id="service-modal-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, massa em
+          aliquam feugiat, lorem ipsum volutpat neque, sed tempor lectus nibh non justo.
+        </p>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <strong>EPA Transportes</strong>
   </footer>
@@ -145,6 +162,104 @@
 
     updateHeaderOnScroll();
     window.addEventListener("scroll", updateHeaderOnScroll);
+
+    const serviceItems = document.querySelectorAll(".service-list li");
+    const serviceModal = document.querySelector("#service-modal");
+    const serviceModalTitle = document.querySelector("#service-modal-title");
+    const serviceModalImage = document.querySelector("#service-modal-image");
+    const serviceModalDescription = document.querySelector("#service-modal-description");
+    const serviceDetails = [
+      {
+        image: "transportando.png",
+        description: "Oferecemos todo o suporte técnico e especializado para transporte e remoção de contêineres de 20 e 40 pés, marítimos ou módulos operacionais para obras, residenciais e outras finalidades.."
+      },
+      {
+        image: "caminhao.png",
+        description: "Realizamos remoções técnicas industriais de máquinas de usinagem, equipamentos operacionais, módulos, transformadores etc. Consulte-nos!"
+      },
+      {
+        image: "EPATRANSPORTES3.png",
+        description: "Somos especialistas em transporte de máquinas operatrizes industriais, como tornos convencionais, fresadoras ferramenteiras e universais, prensas excêntricas, fornos, furadeiras etc."
+      },
+      {
+        image: "image copy 2.png",
+        description: "Com grande experiência em remoções técnicas e transporte de diversos modelos e marcas de centros de usinagem, somos pioneiros no ramo, transportando com segurança e qualidade!"
+      },
+      {
+        image: "transportando.png",
+        description: "Transporte de máquinas impressoras de grande porte, utilizando equipamentos e ferramentas adequados para içamento, com eficiência, segurança e qualidade. Um trabalho que exige experiência, precisão e cuidado acima de tudo!"
+      },
+      {
+        image: "caminhao.png",
+        description: "Precisa cobrir seu galpão ou estruturas metálicas? Conte conosco, da base estrutural à superfície! Temos guindautos e guindastes que atendem às suas necessidades. Consulte-nos!"
+      },
+      {
+        image: "EPATRANSPORTES3.png",
+        description: "Oferecemos serviços de transporte de estruturas metálicas e içamento de produtos específicos para obras e projetos de engenharia civil, elétrica ou predial."
+      },
+      {
+        image: "image copy 2.png",
+        description: "Transporte e remoção de máquinas para a indústria moveleira em geral, incluindo equipamentos CNC, máquinas de cartonagem, coladeiras, estampadoras e outros equipamentos industriais."
+      },
+      {
+        image: "transportando.png",
+        description: "Oferecemos serviços profissionais de içamento, transporte, implantação e retirada de postes metálicos e de concreto com guindauto, garantindo total segurança para sua empresa!"
+      },
+      {
+        image: "caminhao.png",
+        description: "Atuamos em um amplo mercado de máquinas industriais, realizando o transporte e a remoção de dobradeiras CN e CNC, equipamentos para estamparia metálica, guilhotinas, puncionadeiras CNC e hidráulicas, máquinas de corte a laser CNC, equipamentos de oxicorte, entre outros. Executamos cada operação com total segurança e eficiência para sua empresa!"
+      },
+      {
+        image: "EPATRANSPORTES3.png",
+        description: "Seu transformador queimou? Realizamos o transporte com rapidez, segurança e toda a estrutura necessária para atender sua empresa. Conte conosco!"
+      },
+      {
+        image: "EPATRANSPORTES3.png",
+        description: "Oferecemos suporte completo para montagem com içamento, transporte e implantação de totens de comunicação visual, desde pequenos até grandes formatos."
+      }
+    ];
+    function openServiceModal(item, index) {
+      const detail = serviceDetails[index] || serviceDetails[0];
+
+      serviceModalTitle.textContent = item.textContent.trim();
+      serviceModalDescription.textContent = detail.description;
+      serviceModalImage.src = detail.image;
+      serviceModalImage.alt = `Imagem demonstrativa de ${item.textContent.trim()}`;
+      serviceModal.classList.add("is-open");
+      serviceModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeServiceModal() {
+      serviceModal.classList.remove("is-open");
+      serviceModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    serviceItems.forEach((item, index) => {
+      item.setAttribute("tabindex", "0");
+      item.setAttribute("role", "button");
+
+      item.addEventListener("click", () => openServiceModal(item, index));
+      item.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openServiceModal(item, index);
+        }
+      });
+    });
+
+    serviceModal.addEventListener("click", (event) => {
+      if (event.target.hasAttribute("data-close-modal")) {
+        closeServiceModal();
+      }
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && serviceModal.classList.contains("is-open")) {
+        closeServiceModal();
+      }
+    });
   </script>
 </body>
 </html>
