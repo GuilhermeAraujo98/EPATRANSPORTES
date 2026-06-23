@@ -1,5 +1,5 @@
 :root {
-  --red: #ede0e1;
+  --red: #F8A849;
   --red-dark: #F8A849;
   --ink: #15171c;
   --muted: #626873;
@@ -49,7 +49,7 @@ a {
   left: 0;
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(110px, 170px) 1fr minmax(190px, 250px);
+  grid-template-columns: 1fr minmax(190px, 250px);
   align-items: center;
   justify-content: center;
   gap: 18px;
@@ -69,38 +69,11 @@ a {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.34);
 }
 
-.brand {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.brand img {
-  width: clamp(104px, 11vw, 154px);
-  max-height: 62px;
-  object-fit: contain;
-}
-
-.brand span {
-  color: var(--red);
-  font-size: 2rem;
-  line-height: 1;
-}
-
-.brand small {
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-}
-
 .main-nav {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: clamp(24px, 4vw, 54px);
   font-size: 0.95rem;
   font-weight: 700;
@@ -169,7 +142,7 @@ a {
 
 .hero {
   min-height: 92vh;
-  min-height: 92svh;
+  min-height: 100svh;
   display: grid;
   align-items: end;
   padding: 128px clamp(20px, 5vw, 72px) 72px;
@@ -559,7 +532,7 @@ a {
 
 .site-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 18px;
   padding: 22px clamp(20px, 5vw, 72px);
   color: #d4d7dd;
