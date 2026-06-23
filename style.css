@@ -154,6 +154,7 @@ a {
 
 .hero-content {
   width: min(720px, 100%);
+  text-align: left;
 }
 
 .eyebrow {
@@ -579,6 +580,15 @@ a {
     height: 20px;
   }
 
+  .hero-content {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-logo {
+    margin: 0 auto 24px;
+  }
+
   .hero {
     min-height: 88vh;
     min-height: 88svh;
@@ -697,6 +707,14 @@ a {
     fill: currentColor;
     flex: 0 0 auto;
   }
+
+.hero-logo {
+  display: block;
+  width: 100%;
+  max-width: clamp(320px, 50vw, 900px);
+  height: auto;
+  margin-bottom: 24px;
+}
 
   .main-nav a:hover {
     color: var(--red-dark);
