@@ -27,6 +27,13 @@
 
   <main>
     <section class="hero" id="inicio">
+      <div class="hero-background">
+        <img src="EPATRANSPORTES.png" alt="" class="hero-bg-image hero-bg-active">
+        <img src="caminhao.png" alt="" class="hero-bg-image">
+        <img src="EPATRANSPORTES3.png" alt="" class="hero-bg-image">
+        <img src="image copy 2.png" alt="" class="hero-bg-image">
+      </div>
+      <div class="hero-gradient"></div>
       <div class="hero-content">
         <img src="logo.png" alt="EPA Transportes" class="hero-logo">
         <p class="hero-text">
@@ -258,6 +265,21 @@
         closeServiceModal();
       }
     });
+
+    // Carrossel automático de fundo - cross-fade
+    const heroBgImages = document.querySelectorAll(".hero-bg-image");
+    let currentBgIndex = 0;
+
+    function showNextBgImage() {
+      if (heroBgImages.length === 0) return;
+
+      heroBgImages[currentBgIndex].classList.remove("hero-bg-active");
+      currentBgIndex = (currentBgIndex + 1) % heroBgImages.length;
+      heroBgImages[currentBgIndex].classList.add("hero-bg-active");
+    }
+
+    // Muda a imagem de fundo a cada 5 segundos
+    setInterval(showNextBgImage, 5000);
   </script>
 </body>
 </html>
