@@ -28,14 +28,14 @@
   <main>
     <section class="hero" id="inicio">
       <div class="hero-background">
-        <img src="EPATRANSPORTES.png" alt="" class="hero-bg-image hero-bg-active">
-        <img src="caminhao.png" alt="" class="hero-bg-image">
-        <img src="EPATRANSPORTES3.png" alt="" class="hero-bg-image">
-        <img src="image copy 2.png" alt="" class="hero-bg-image">
+        <img src="assets/images/carrosel1.png" alt="" class="hero-bg-image hero-bg-active">
+        <img src="assets/images/carrosel2.png" alt="" class="hero-bg-image">
+        <img src="assets/images/carrosel3.png" alt="" class="hero-bg-image">
+        <img src="assets/images/carrosel4.png" alt="" class="hero-bg-image">
       </div>
       <div class="hero-gradient"></div>
       <div class="hero-content">
-        <img src="logo.png" alt="EPA Transportes" class="hero-logo">
+        <img src="assets/images/logo.png" alt="EPA Transportes" class="hero-logo">
         <p class="hero-text">
           Soluções práticas para remover, movimentar e transportar equipamentos pesados
           com agilidade, cuidado operacional e atendimento confiável.
@@ -58,7 +58,7 @@
 
       <div class="service-grid">
         <article class="service-card">
-          <img src="EPATRANSPORTES.png" alt="Guindauto movimentando equipamento pesado em ambiente industrial">
+          <img src="assets/images/EPATRANSPORTES.png" alt="Guindauto movimentando equipamento pesado em ambiente industrial">
           <div>
             <h3>Remoção industrial</h3>
             <p>Movimentação de máquinas, equipamentos e volumes pesados em fábricas, galpões e áreas técnicas.</p>
@@ -66,7 +66,7 @@
         </article>
 
         <article class="service-card">
-          <img src="caminhao.png" alt="Caminhao da EPA Transportes ao lado de equipamento industrial">
+          <img src="assets/images/caminhao.png" alt="Caminhao da EPA Transportes ao lado de equipamento industrial">
           <div>
             <h3>Transporte especializado</h3>
             <p>Transporte de cargas pesadas com avaliação do volume, percurso e pontos de carga e descarga.</p>
@@ -74,7 +74,7 @@
         </article>
 
         <article class="service-card highlight-card">
-          <img src="EPATRANSPORTES3.png" alt="Caminhao EPA Transportes com guindauto">
+          <img src="assets/images/EPATRANSPORTES3.png" alt="Caminhao EPA Transportes com guindauto">
           <div>
             <h3>Operação com munck</h3>
             <p>Equipamento adequado para elevar, posicionar e transferir cargas com maior precisão operacional.</p>
@@ -83,7 +83,7 @@
       </div>
 
       <div class="service-list">
-        <h3>Serviços oferecidos</h3>
+        <h3>Nossos serviços</h3>
         <ul>
           <li>Obras e Engenharia</li>
           <li>Centros de Usinagens e Tornos CNC</li>
@@ -105,7 +105,7 @@
 
     <section class="section about" id="sobre">
       <div class="about-media">
-        <img src="image copy 2.png" alt="Caminhao EPA Transportes durante operacao de carga">
+        <img src="assets/images/image copy 2.png" alt="Caminhao EPA Transportes durante operacao de carga">
       </div>
       <div class="about-content">
         <p class="eyebrow">Sobre a EPA</p>
@@ -129,6 +129,7 @@
       </div>
       <div class="contact-box">
         <a href="mailto:epamunck@bol.com.br">epamunck@bol.com.br</a>
+        <a href="mailto:epa@epatransportes.com.br">epa@epatransportes.com.br</a>
         <span>Rua Andre Franco Montoro, 222</span>
         <span>Sao Bernardo do Campo - SP</span>
         <span>CEP 09854-300</span>
@@ -142,7 +143,7 @@
     <div class="service-modal__overlay" data-close-modal></div>
     <div class="service-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="service-modal-title">
       <button class="service-modal__close" type="button" aria-label="Fechar janela" data-close-modal>×</button>
-      <img id="service-modal-image" src="transportando.png" alt="Imagem demonstrativa do serviço selecionado">
+      <img id="service-modal-image" src="assets/images/obras-engenharia.png" alt="Imagem demonstrativa do serviço selecionado">
       <div class="service-modal__content">
         <p class="eyebrow">Serviço selecionado</p>
         <h3 id="service-modal-title">Serviço</h3>
@@ -175,51 +176,51 @@
     const serviceModalDescription = document.querySelector("#service-modal-description");
     const serviceDetails = [
       {
-        image: "obras-engenharia.png",
+        image: "assets/images/obras-engenharia.png",
         description: "Oferecemos serviços de transporte de estruturas metálicas e içamento de produtos específicos para obras e projetos de engenharia civil, elétrica ou predial."
       },
       {
-        image: "tornocnc.png",
+        image: "assets/images/tornocnc.png",
         description: "Com grande experiência em remoções técnicas e transporte de diversos modelos e marcas de centros de usinagem, somos pioneiros no ramo, transportando com segurança e qualidade!"
       },
       {
-        image: "EPATRANSPORTES3.png",
+        image: "assets/images/geradores.png",
         description: "Somos especialistas em transporte de máquinas operatrizes industriais, como tornos convencionais, fresadoras ferramenteiras e universais, prensas excêntricas, fornos, furadeiras etc."
       },
       {
-        image: "postes.png",
+        image: "assets/images/postes.png",
         description: "oferecemos serviços de transporte de estruturas metálicas e içamento de produtos específicos para obras e projetos de engenharia civil, elétrica ou predial."
       },
       {
-        image: "transformadores.png",
+        image: "assets/images/transformadores.png",
         description: "SEU TRANSFORMADOR QUEIMOU? NÓS TRANSPORTAMOS PARA SUA EMPRESA! CONTE CONOSCO!"
       },
       {
-        image: "container.png",
+        image: "assets/images/container.png",
         description: "Se precisa carregar ou descarregar um caminhão e não dispuser de empilhadeira, conte com a EPA Transportes. Vamos até sua empresa e realizamos a remoção da sua máquina, bem como o carregamento e descarregamento em caminhões de carga seca ou de terceiros, com total segurança e eficiência. Somos especializados na retirada de máquinas de contêineres diretamente da importação. A operação pode ser realizada no cliente final ou com retirada no porto, contando com toda a infraestrutura necessária para o transporte. Consulte-nos!"
       },
       {
-        image: "estruturas-metalicas.png",
+        image: "assets/images/estruturas-metalicas.png",
         description: "Precisa cobrir seu galpão ou estruturas metálicas? Conte conosco, da base estrutural à superfície! Temos guindautos e guindastes que atendem às suas necessidades. Consulte-nos!"
       },
       {
-        image: "impressoras.png",
+        image: "assets/images/impressoras.png",
         description: "Ttransporte de máquinas impressoras de grandes formatos, com equipamentos e ferramentas adequados para içamento, garantindo eficiência e qualidade. Um trabalho que exige experiência e cuidado acima de tudo!"
       },
       {
-        image: "dobradeiras.png",
+        image: "assets/images/dobradeiras.png",
         description: "Atuamos em um amplo mercado de máquinas industriais, incluindo dobradeiras CN e CNC, equipamentos para estamparia metálica, guilhotinas, puncionadeiras CNC e hidráulicas, máquinas de corte a laser CNC, equipamentos de oxicorte e diversos outros tipos de máquinas. Realizamos o transporte e a remoção com total segurança para sua empresa!"
       },
       {
-        image: "remocoes.png",
+        image: "assets/images/remocoes.png",
         description: "Realizamos remoções técnicas industriais de máquinas de usinagem, equipamentos operacionais, módulos, transformadores e outros equipamentos. Consulte-nos!"
       },
       {
-        image: "eventos.png",
+        image: "assets/images/eventos.png",
         description: "Oferecemos suporte completo para montagem com içamento, transporte e implantação de totens de comunicação visual, desde pequenos até grandes formatos."
       },
       {
-        image: "injetoras.png",
+        image: "assets/images/injetoras.png",
         description: "Realizamos o transporte e a remoção de máquinas injetoras com total segurança, utilizando equipamentos adequados e mão de obra especializada para garantir a integridade dos equipamentos durante toda a operação."
       }
     ];
