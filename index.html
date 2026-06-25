@@ -11,7 +11,15 @@
 </head>
 <body>
   <header class="site-header">
-    <nav class="main-nav" aria-label="Navegacao principal">
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a class="header-logo" href="#inicio" aria-label="EPA Transportes - Inicio">
+      <img src="assets/images/logo.png" alt="EPA Transportes">
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Navegacao principal">
       <a href="#inicio">Home</a>
       <a href="#servicos">Serviços</a>
       <a href="#sobre">Sobre</a>
@@ -161,6 +169,8 @@
 
   <script>
     const header = document.querySelector(".site-header");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
 
     function updateHeaderOnScroll() {
       header.classList.toggle("is-scrolled", window.scrollY > 24);
@@ -168,6 +178,22 @@
 
     updateHeaderOnScroll();
     window.addEventListener("scroll", updateHeaderOnScroll);
+
+    function closeMobileMenu() {
+      header.classList.remove("menu-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Abrir menu");
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = header.classList.toggle("menu-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+    });
+
+    mainNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
+    });
 
     const serviceItems = document.querySelectorAll(".service-list li");
     const serviceModal = document.querySelector("#service-modal");
@@ -262,6 +288,10 @@
     });
 
     window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && header.classList.contains("menu-open")) {
+        closeMobileMenu();
+      }
+
       if (event.key === "Escape" && serviceModal.classList.contains("is-open")) {
         closeServiceModal();
       }
